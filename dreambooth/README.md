@@ -13,4 +13,8 @@ To setup up Myriad and run your jobs just follow the following steps.
 
 3. Once you have logged into Myriad, clone this repo using `git clone https://github.com/dlcv-journal-club/TextToImageModels`
 
-4. If you have your own image that you want to finetune with, delete all existing images in the `data/zwx` directory, exit out of Myriad, and upload each of your photos your photos using `scp YOUR_PHOTO.png ucaXXXX@myriad.rc.ucl.ac.uk:~/PATH_TO_REPO/dreambooth/data/zwx`
+4. (Optional) If you have your own image that you want to finetune with, delete all existing images in the `data/zwx` directory, exit out of Myriad, and upload each of your photos your photos using `scp YOUR_PHOTO.png ucaXXXX@myriad.rc.ucl.ac.uk:~/PATH_TO_REPO/dreambooth/data/zwx`
+
+5. (Optional) Log back into Myraid and navagate to the `stable_diffusion_weights/zwx`.  If your subject is anything other than a dog, you will need to change all instances of the word "dog" in the `concepts_list.json` file.  For example, if your subject is the empire state building, you may wont to change "dog" to "tower", or if you subject is a specific person you may want to change it to "person".  You can edit this file using `vim copncepts_list.json`.
+
+6. Change 
