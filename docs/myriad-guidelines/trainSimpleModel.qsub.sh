@@ -60,7 +60,7 @@ module load pytorch/1.11.0/gpu
 # echo WANDB_LOGIN
 # wandb login dc75d2e0e7638284f8029d745f2ac17c452e9de8
 echo SCRIPT_START
-python simple_model.py
+python your_model.py
 echo SCRTIP_END
 
 # print hostname and date for reference again
