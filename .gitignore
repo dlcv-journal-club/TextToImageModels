@@ -1,0 +1,24 @@
+# Ignored paths and directories
+## pycharm project path
+.idea
+
+## images and tensors
+
+## models
+
+## others
+
+## ignore datapaths 
+
+## temporal __pycache__/
+**/__pycache__/
+
+## .ipynb_checkpoints/
+**/.ipynb_checkpoints
+
+## ignore training checkpoints
+
+## ignores vim temporal files
+**/*.swp
+
+## ignores drawing-v**.png files
