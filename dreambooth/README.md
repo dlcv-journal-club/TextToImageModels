@@ -1,0 +1,16 @@
+This coding session is based on [this notebook](https://github.com/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb).  If you do not have a Myriad account, you can use this notebook on Google Colab instead.
+
+
+### Instructions
+
+To setup up Myriad and run your jobs just follow the following steps.   
+
+1. You might not be connected by UCL network to which you need to conect to the UCL VPN for your OS:
+  * [Linux](https://www.ucl.ac.uk/isd/how-to/connecting-to-ucl-vpn-linux),
+  * [Windows, macOS, etc](https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn)
+
+2. Make sure you can log in on the command line using `ssh ucaXXXX@myriad.rc.ucl.ac.uk` where ucaXXXX is your UCL username. Then use `exit` to log out.
+
+3. Once you have logged into Myriad, clone this repo using `git clone https://github.com/dlcv-journal-club/TextToImageModels`
+
+4. If you have your own image that you want to finetune with, delete all existing images in the `data/zwx` directory, exit out of Myriad, and upload each of your photos your photos using `scp YOUR_PHOTO.png ucaXXXX@myriad.rc.ucl.ac.uk:~/PATH_TO_REPO/dreambooth/data/zwx`
