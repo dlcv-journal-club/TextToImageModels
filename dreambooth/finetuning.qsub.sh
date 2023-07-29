@@ -37,6 +37,7 @@
 # print hostname and data for reference.
 hostname
 date
+pwd
 
 # I've found that I sometimes need to include the path to conda's libraries. No harm in including it.
 export LD_LIBRARY_PATH=/home/$USER/miniconda3/lib/:${LD_LIBRARY_PATH}
@@ -94,7 +95,7 @@ date
 
 
 # cleanup
-rm -r $COPYDIR
+# rm -r $COPYDIR
 
 # give time for a clean exit.
 sleep 10
