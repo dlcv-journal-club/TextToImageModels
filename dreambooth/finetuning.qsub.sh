@@ -44,19 +44,22 @@ pwd
 export LD_LIBRARY_PATH=/home/$USER/miniconda3/lib/:${LD_LIBRARY_PATH}
 
 # optionally activate your conda env here:
-module -f unload compilers mpi gcc-libs
-module load beta-modules
-module load gcc-libs/10.2.0
-module load python3/3.9-gnu-10.2.0
-module load cuda/11.3.1/gnu-10.2.0
-module load cudnn/8.2.1.32/cuda-11.3
+#module -f unload compilers mpi gcc-libs
+#module load beta-modules
+#module load gcc-libs/10.2.0
+#module load python3/3.9-gnu-10.2.0
+#module load cuda/11.3.1/gnu-10.2.0
+#module load cudnn/8.2.1.32/cuda-11.3
+#
 
-source bin/activate
+conda activate dreambooth
+conda install cudatoolkit
 pip install torch
 pip install -qq git+https://github.com/ShivamShrirao/diffusers
 pip install -q -U --pre triton
 pip install -q -U accelerate==0.21.0
 pip install -q transformers ftfy bitsandbytes==0.35.0 gradio natsort safetensors xformers
+pip install -q torchvision
 
 pwd 
 cd dreambooth
