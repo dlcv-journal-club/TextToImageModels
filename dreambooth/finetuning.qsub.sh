@@ -31,6 +31,7 @@
 #$ -o ~/runLog/
 
 #########################/FLAGS#################################
+set -e
 
 #The code you want to run now goes here.
 
