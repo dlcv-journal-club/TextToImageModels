@@ -53,17 +53,10 @@ export LD_LIBRARY_PATH=/home/$USER/miniconda3/lib/:${LD_LIBRARY_PATH}
 #
 
 conda activate dreambooth
-conda install cudatoolkit
-pip install torch
-pip install -qq git+https://github.com/ShivamShrirao/diffusers
-pip install -q -U --pre triton
-pip install -q -U accelerate==0.21.0
-pip install -q transformers ftfy bitsandbytes==0.35.0 gradio natsort safetensors xformers
-pip install -q torchvision
 
 pwd 
-cd dreambooth
-cd text_to_image_tutorial
+cd /home/cceajes/text_to_image/TextToImageModels/dreambooth
+pwd
 
 python3 train_dreambooth.py \
   --pretrained_model_name_or_path="runwayml/stable-diffusion-v1-5" \
