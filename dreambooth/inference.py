@@ -1,4 +1,6 @@
 import argparse
+import os
+from datetime import datetime
 import torch
 from torch import autocast
 from diffusers import StableDiffusionPipeline, DDIMScheduler
@@ -46,9 +48,11 @@ with autocast("cuda"), torch.inference_mode():
         generator=g_cuda
     ).images
 
+subdir = f'imgs/{datetime.now().strftime("%Y%m%dT%H%M%S")}'
+os.makedirs(subdir)
 for counter, img in enumerate(images):
     #display(img)
-    img.save("imgs/img" + str(counter) + '.jpg')
+    img.save(f"{subdir}/img" + str(counter) + '.jpg')
 
-with open('imgs/prompt.txt', 'w') as prompt_out:
+with open(f'{subdir}/prompt.txt', 'w') as prompt_out:
     print(prompt, file=prompt_out)

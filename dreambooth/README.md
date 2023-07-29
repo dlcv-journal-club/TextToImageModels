@@ -31,4 +31,4 @@ To setup Myriad and run your jobs just follow the following steps.
 
 10. Queue your inference job using `qsub inference.qsub.sh`. You can override the hard-coded prompt with `MYPROMPT="photo of zwx dog, cartoon style" qsub -v MYPROMPT inference.qsub.sh`. (Note that you can't pass a variable containing a comma to `-v` because it uses commas as the variable separator, hence the above workaround.)
 
-11. Wait for the job to complete; once it's done, you should see your images in the `imgs` directory. You can rerun the previous step, which will overwrite the images, so save them first if you want.
+11. Wait for the job to complete; once it's done, you should see your images in the `imgs` directory. You can rerun the previous step with a new prompt if you want.
