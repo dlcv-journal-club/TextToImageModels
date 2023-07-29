@@ -22,3 +22,7 @@
 **/*.swp
 
 ## ignores drawing-v**.png files
+
+
+
+dreambooth/stable_diffusion_weights/

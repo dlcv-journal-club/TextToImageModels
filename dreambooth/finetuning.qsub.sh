@@ -25,7 +25,7 @@
 #$ -j y
 
 # make sure you give it a memorable name
-#$ -N Dreambooth
+#$ -N Dreambooth_finetuning
 
 # output directory for STDOUT file
 #$ -o ~/runLog/
@@ -82,8 +82,6 @@ python3 train_dreambooth.py \
   --concepts_list="concepts_list.json"
 
 python3 convert_diffusers_to_original_stable_diffusion.py --model_path "stable_diffusion_weights/zwx/800"  --checkpoint_path "stable_diffusion_weights/zwx/800/model.ckpt" --half
-
-python3 inference.py
 
 # print hostname and date for reference again
 hostname

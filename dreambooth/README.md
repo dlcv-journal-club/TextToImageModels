@@ -23,11 +23,12 @@ To setup Myriad and run your jobs just follow the following steps.
 
 7. The `inference.py` file contains a prompt that will be used to generate our final images. Alter this file using `vim inference.py`. Change the `prompt` variable on line 16 to something fun, but make sure to keep the words "photo of zwx CLASS_NAME" at the start of the prompt. By default, CLASS_NAME will be "dog".
 
-8. Edit `finetuning.qsub.sh` and review the contents:
+8. Edit `finetuning.qsub.sh` and `inference.qsub.sh` and review the contents:
     - Make sure the output directory under `#$ -o ~/FOO/` exists.
-    - delete `source bin/activate`, replace with `conda activate dreambooth` (the conda env you created earlier).
     - Make sure it `cd`s to the correct location of the `dreambooth` directory    - The `--save_sample_prompt` option should be changed if the input images are not of a dog, as in previous steps. Eg. `--save_sample_prompt="photo of zwx tower"`
 
-9. Queue your job using `qsub finetuning.qsub.sh`.
+9. Queue your finetuning job using `qsub finetuning.qsub.sh`. This will only need to be run once, unless you change your input images. Wait for it to finish.
 
-10. Wait for the job to complete; once it's done, you should see your images in the `imgs` directory.
+10. Queue your inference job using `qsub inference.qsub.sh`. You can override the hard-coded prompt with `MYPROMPT="photo of zwx dog, cartoon style" qsub -v MYPROMPT inference.qsub.sh`. (Note that you can't pass a variable containing a comma to `-v` because it uses commas as the variable separator, hence the above workaround.)
+
+11. Wait for the job to complete; once it's done, you should see your images in the `imgs` directory. You can rerun the previous step, which will overwrite the images, so save them first if you want.

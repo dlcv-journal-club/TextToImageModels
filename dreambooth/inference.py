@@ -1,8 +1,19 @@
+import argparse
 import torch
 from torch import autocast
 from diffusers import StableDiffusionPipeline, DDIMScheduler
 
 model_path = 'stable_diffusion_weights/zwx/800'             
+
+parser = argparse.ArgumentParser(description="Run inference")
+parser.add_argument(
+    "--prompt",
+    type=str,
+    default=None,
+    required=False,
+    help="prompt",
+)
+args = parser.parse_args()
 
 pipe = StableDiffusionPipeline.from_pretrained(model_path, safety_checker=None, torch_dtype=torch.float16).to("cuda")
 pipe.scheduler = DDIMScheduler.from_config(pipe.scheduler.config)
@@ -14,6 +25,8 @@ seed = 52362 #@param {type:"number"}
 g_cuda.manual_seed(seed)
 
 prompt = "photo of zwx dog in a bucket" #@param {type:"string"}
+if args.prompt is not None:
+    prompt = args.prompt
 negative_prompt = "" #@param {type:"string"}
 num_samples = 4 #@param {type:"number"}
 guidance_scale = 7.5 #@param {type:"number"}
@@ -36,3 +49,6 @@ with autocast("cuda"), torch.inference_mode():
 for counter, img in enumerate(images):
     #display(img)
     img.save("imgs/img" + str(counter) + '.jpg')
+
+with open('imgs/prompt.txt', 'w') as prompt_out:
+    print(prompt, file=prompt_out)
