@@ -19,6 +19,8 @@ To setup up Myriad and run your jobs just follow the following steps.
 
 6. The `inference.py` file contains a prompt that will be used to generate our final images. Alter this file using `vim inference.py`. Change the `prompt` variable on line 16 to something fun, but make sure to keep the words "photo of zwx CLASS_NAME" at the start of the prompt. By default, CLASS_NAME will be "dog".
 
-7. Queue your job using `qsub finetuning.qsub.sh`.
+7. In `finetuning.qsub.sh`, change line 61 such that you are navigating to the directory containing your `train_dreambooth.py` file.  Assume that you are starting from the directory you land in when logging into Myriad.
 
-8. Wait for the job to complete; once it's done, you should see your images in the `imgs` directory.
+8. Queue your job using `qsub finetuning.qsub.sh`.
+
+9. Wait for the job to complete; once it's done, you should see your images in the `imgs` directory.
