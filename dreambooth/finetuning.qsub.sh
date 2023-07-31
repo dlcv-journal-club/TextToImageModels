@@ -56,9 +56,9 @@ pip install -q -U --pre triton
 pip install -q -U accelerate==0.21.0
 pip install -q transformers ftfy bitsandbytes==0.35.0 gradio natsort safetensors xformers
 
+# cd into the directory that contains the train_dreambooth.py file
 pwd 
-cd dreambooth
-cd text_to_image_tutorial
+cd TextToImageModels/dreambooth
 
 python3 train_dreambooth.py \
   --pretrained_model_name_or_path="runwayml/stable-diffusion-v1-5" \
