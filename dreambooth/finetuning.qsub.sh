@@ -91,11 +91,6 @@ python3 inference.py
 hostname
 date
 
-
-
-# cleanup
-rm -r $COPYDIR
-
 # give time for a clean exit.
 sleep 10
 
